@@ -21,6 +21,11 @@ The list of dependencies for destripe is stored in the requirements text file. T
 
    `pip install -r requirements.txt`
 
+### Dependencies
+
+   `python main_GUI.py -d folder_containing_tif_files -f file_name`
+`
+
 ## Contribute
 
 We hope you find this package useful in advancing your own research. 
