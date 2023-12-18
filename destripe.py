@@ -19,7 +19,7 @@ class destripe:
 		self.fft_raw = None
 		self.ax_list = None
 
-	def TV_reconstruction(self, save): 
+	def TV_reconstruction(self, save,name='recon.tif'): 
 
 		#dataset - real-space image (pixels)
 		#Niter - Number of iterations for reconstruction
@@ -74,7 +74,9 @@ class destripe:
 
 		if save:
 			recon_constraint = recon_constraint/np.amax(recon_constraint)*255
-			io.imsave('recon.tif', np.uint8(recon_constraint))
+			print ('Saving ....')
+			io.imsave(name, np.uint8(recon_constraint))
+			print ('Saved')
 
 		recon_fft = np.log(np.abs(fftshift(self.fftw.fft(recon_constraint))) + 1)
 

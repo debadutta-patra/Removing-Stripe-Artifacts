@@ -12,7 +12,7 @@ kmin = 15 #min frequency to start missing wedge (1/px) ( < 0.5 * Length of image
 niter = 100 #number of iterations for reconstruction
 a = 0.2 #Descent parameter for TV minimization
 save = 1 # Set to true to save final reconstruction. 
-show = 1 # Set to true to see FFT and location of missing wedge. 
+show = 0 # Set to true to see FFT and location of missing wedge. 
 #If set to false, the reconstruction will run. 
 
 #Read input image
@@ -26,4 +26,4 @@ if show: #Show the Original Image, FFT, and missing wedge (Region being reconstr
 	destripe_obj.view_missing_wedge()
 	plt.show()
 else: #Start reconstruction. 
-	destripe_obj.TV_reconstruction(save)
+	destripe_obj.TV_reconstruction(save,name='sample_data/nacreous_domain_2.tif')
